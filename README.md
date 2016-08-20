@@ -17,6 +17,49 @@ Do
     
 and you should be ready to go.
 
+## Example
+
+```
+[recon-ng][default] > workspaces add Telekom
+[recon-ng][Telekom] > add companies
+company (TEXT): Deutsche Telekom AG
+description (TEXT): 
+[recon-ng][Telekom] > use xing_employees
+[recon-ng][Telekom][xing_employees] > run
+[*] [profile] Laurence_ABRARD - Xing (https://www.xing.com/profile/Laurence_ABRARD)
+[*] [contact] Laurence Abrard (<blank>) - Human resources international business partner
+[*] [profile] Fevzi_ACAR2 - Xing (https://www.xing.com/profile/Fevzi_ACAR2)
+[*] [contact] Fevzi Acar (<blank>) - Tekniker
+...
+
+```
+## Help
+
+```
+[recon-ng][Telekom][xing_employees] > show info
+
+      Name: XING employee grabber
+      Path: modules/recon/companies-multi/xing_employees.py
+    Author: Michael Helwig (@c0dmtr1x)
+
+Description:
+  Imports employee list from a XING company page to contacts and profiles tables. Iterates through the
+  alphabet and grabs data for each letter with up to LIMIT results.
+
+Options:
+  Name    Current Value  Required  Description
+  ------  -------------  --------  -----------
+  COOKIE                 no        Cookie data from your current XING login. You might get more data when logged in. At least "_session_id" and "login" parameters are needed.
+  LIMIT   500            yes       Limit of employees per letter
+  SOURCE  default        yes       source of input (see 'show info' for details)
+
+Source Options:
+  default        SELECT DISTINCT company FROM companies WHERE company IS NOT NULL
+  <string>       string representing a single input
+  <path>         path to a file containing a list of inputs
+  query <sql>    database query returning one column of inputs
+
+```
 ## Notes
 This plugin works by retrieving some JSON data via a call found on the XING website. This means it does not make use of the official XING api but of undocumented calls that worked during the creation of that plugin but might not work tomorrow. 
 
