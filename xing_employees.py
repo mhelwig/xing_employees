@@ -8,7 +8,7 @@ from requests import HTTPError
 class Module(BaseModule):
     meta = {
         'name': 'XING employee grabber',
-        'author': 'Michael Helwig (@c0dmtr1x) update to python3 Alexander Schwankner',
+        'author': 'Michael Helwig (@c0dmtr1x)',
 		'description': 'Imports employee list from a XING company page to contacts and profiles tables. Iterates through the alphabet and grabs data for each letter with up to LIMIT results.',
         'options': (
             ('cookie', None, False, 'Cookie data from your current XING login. You might get more data when logged in. At least "_session_id" and "login" parameters are needed.'),
