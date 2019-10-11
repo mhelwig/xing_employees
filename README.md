@@ -7,24 +7,24 @@ This is a <a href="https://bitbucket.org/LaNMaSteR53/recon-ng">recon-ng</a> modu
 ## Installation
 Just put it in the `modules/recon/companies-multi` directory (or any modules subdirectory) of the recon-ng framwork. This is
 
-     /usr/share/recon-ng/modules/recon/companies-multi
+     ~/.recon-ng/modules/recon/companies-multi
      
 on Kali.
 
 Do 
 
-    reload
+    modules reload
     
 and you should be ready to go.
 
 ## Example
 
 ```
-[recon-ng][default] > workspaces add Telekom
-[recon-ng][Telekom] > add companies
+[recon-ng][default] > workspaces create Telekom
+[recon-ng][Telekom] > db insert companies
 company (TEXT): Deutsche Telekom AG
 description (TEXT): 
-[recon-ng][Telekom] > use xing_employees
+[recon-ng][Telekom] > modules load recon/companies-multi/xing_employees
 [recon-ng][Telekom][xing_employees] > run
 [*] [profile] Laurence_ABRARD - Xing (https://www.xing.com/profile/Laurence_ABRARD)
 [*] [contact] Laurence Abrard (<blank>) - Human resources international business partner
